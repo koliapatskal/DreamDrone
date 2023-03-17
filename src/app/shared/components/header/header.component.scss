@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.header {
+  position: absolute;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6.25rem;
+
+  padding: 2.375rem 11.5625rem;
+
+  background-color: $black-background-color;
+
+  &__logo {
+    width: 4.6875rem;
+    height: 2.1875rem;
+  }
+
+  &__navigation {
+  }
+
+  &__search {
+    color: $white-font-color;
+    cursor: pointer;
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+}
+
+.navigation {
+  &__link-list {
+    display: flex;
+    gap: 6.25rem;
+  }
+
+  &__link {
+    font-size: 1.125rem;
+    font-weight: $medium-font-weight;
+    line-height: 1.5;
+
+    color: $white-font-color;
+  }
+}
