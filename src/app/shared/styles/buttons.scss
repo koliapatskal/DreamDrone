@@ -1,0 +1,20 @@
+@import './variables.scss';
+
+.button {
+  padding: 0.6875rem 3.625rem;
+  border-radius: 1.875rem;
+
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+
+  color: $white-font-color;
+
+  &__blue {
+    background-color: #2e4dec;
+    transition: all 0.3s;
+    &:hover {
+      background-color: darken($color: #2e4dec, $amount: 15);
+    }
+  }
+}
