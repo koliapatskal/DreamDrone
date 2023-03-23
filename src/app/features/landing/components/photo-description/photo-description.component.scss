@@ -1,0 +1,69 @@
+@import '../../../../shared/styles/variables.scss';
+
+:host {
+  max-width: 1440px;
+  padding: 1.875rem;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.25rem;
+}
+
+.figure {
+  position: relative;
+  img {
+    width: 100%;
+    height: 660px;
+  }
+
+  &__description {
+    padding: 7.5rem 4.25rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+
+  text-align: center;
+
+  &__dark-text {
+    color: $black-font-color;
+
+    .description__subtitle {
+      color: rgba($color: $black-font-color, $alpha: 0.5);
+    }
+    .description__highlight-text {
+      color: rgba($color: $black-font-color, $alpha: 1);
+    }
+  }
+  &__light-text {
+    color: $white-font-color;
+    .description__subtitle {
+      color: rgba($color: $white-font-color, $alpha: 0.5);
+    }
+    .description__highlight-text {
+      color: rgba($color: $white-font-color, $alpha: 1);
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__subtitle {
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 1.78;
+  }
+}
