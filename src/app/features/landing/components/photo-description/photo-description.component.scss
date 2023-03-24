@@ -1,7 +1,7 @@
 @import '../../../../shared/styles/variables.scss';
 
 :host {
-  max-width: 1440px;
+  max-width: $wrapper-size;
   padding: 1.875rem;
   margin: 0 auto;
 

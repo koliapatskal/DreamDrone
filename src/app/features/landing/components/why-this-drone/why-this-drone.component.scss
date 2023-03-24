@@ -1,0 +1,78 @@
+@import '../../../../shared/styles/variables.scss';
+
+:host {
+  display: block;
+  background-color: $light-gray-background-color;
+}
+
+.wrapper {
+  max-width: $wrapper-size;
+
+  padding: 5rem 8.75rem;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.figure {
+  img {
+    width: 342px;
+    height: 358px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: $black-font-color;
+
+  &__title {
+    margin-bottom: 1rem;
+
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__general {
+    margin-bottom: 1.875rem;
+
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+}
+
+.characteristics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr 1.3fr;
+  column-gap: 4.375rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  text-align: center;
+
+  width: fit-content;
+
+  &__value {
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__characteristic-name {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.5;
+
+    color: rgba($color: $black-font-color, $alpha: 0.5);
+  }
+}
