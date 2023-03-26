@@ -1,0 +1,75 @@
+@import '../../../../shared/styles/variables.scss';
+
+:host {
+  display: block;
+  padding: 3.125rem 9.375rem 9.375rem;
+  margin: 0 auto;
+
+  max-width: $wrapper-size;
+  color: $black-font-color;
+}
+
+.title {
+  margin-bottom: 5rem;
+
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.625;
+
+  max-width: 550px;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3.125rem;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1.875rem;
+
+    border: 1px solid $gray-border-color;
+    border-radius: 10px;
+  }
+
+  &__text {
+    margin-bottom: 1.875rem;
+
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.875;
+  }
+}
+
+.reviewer {
+  display: flex;
+  gap: 1.875rem;
+  align-items: center;
+
+  &__photo {
+    width: 70px;
+    border-radius: 50%;
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__position {
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.5;
+
+    color: $gray-font-color;
+  }
+}

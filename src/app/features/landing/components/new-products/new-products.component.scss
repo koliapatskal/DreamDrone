@@ -4,6 +4,9 @@
 :host {
   display: block;
   padding: 3.125rem 9.375rem;
+  margin: 0 auto;
+
+  max-width: $wrapper-size;
 }
 
 .title {
@@ -42,7 +45,7 @@
   flex-direction: column;
   padding: 2.8125rem;
 
-  border: 1px solid #e5e5e5;
+  border: 1px solid $gray-border-color;
   border-radius: 10px;
   box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.05);
 
