@@ -36,4 +36,10 @@ $DreamDrone-theme: mat.define-light-theme(
 
 @import 'src/app/shared/styles/reset.scss';
 @import 'src/app/shared/styles/fonts.scss';
+@import 'src/app/shared/styles/variables.scss';
 @import '~swiper/swiper-bundle.css';
+
+.container {
+  max-width: rem($maxWidth);
+  margin: 0 auto;
+}

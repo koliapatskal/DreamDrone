@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 $white-background-color: white;
 $black-background-color: black;
 $light-gray-background-color: #f7f8fa;
@@ -13,3 +15,7 @@ $medium-font-weight: 500;
 $light-font-weight: 300;
 
 $wrapper-size: 1440px;
+
+$fontSize: rem(16);
+$minWidth: 380;
+$maxWidth: 1440;

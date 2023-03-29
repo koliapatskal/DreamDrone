@@ -1,0 +1,30 @@
+@use 'sass:math';
+@use 'sass:string';
+
+@function rem($px) {
+  $result: math.div($px, 16) + rem;
+  @return $result;
+}
+
+@mixin responsive-properties($props, $min-screen: $minWidth, $max-screen: $maxWidth) {
+  @media (max-width: rem($min-screen)) {
+    @each $property, $values in $props {
+      #{$property}: map-get($values, min) + px;
+    }
+  }
+  @media (min-width: rem($max-screen)) {
+    @each $property, $values in $props {
+      #{$property}: map-get($values, max) + px;
+    }
+  }
+
+  @media (min-width: rem($min-screen)) and (max-width: rem($max-screen)) {
+    @each $property, $values in $props {
+      $min-value: map-get($values, min);
+      $max-value: map-get($values, max);
+      #{$property}: calc(
+        #{$min-value}px + (#{$max-value} - #{$min-value}) * ((100vw - #{$min-screen}px) / (#{$max-screen} - #{$min-screen}))
+      );
+    }
+  }
+}

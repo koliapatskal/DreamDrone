@@ -1,12 +1,39 @@
 @import '../../../../shared/styles/buttons.scss';
-@import '../../../../shared/styles/variables.scss';
 
 :host {
+  display: block;
+  background-color: $black-background-color;
+}
+
+$containerResponsiveValues: (
+  gap: (
+    min: 27,
+    max: 16
+  ),
+  padding-top: (
+    min: 120,
+    max: 150
+  ),
+  padding-right: (
+    min: 30,
+    max: 378
+  ),
+  padding-left: (
+    min: 30,
+    max: 378
+  ),
+  padding-bottom: (
+    min: 200,
+    max: 400
+  )
+);
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 9.6875rem 23.625rem 25.6875rem;
+
+  @include responsive-properties($containerResponsiveValues);
 
   background-image: url('../../../../../assets/images/get-now-drone.png');
   background-position: center;
@@ -20,6 +47,10 @@
 
   color: $white-font-color;
   text-align: center;
+
+  @media (max-width: rem(calc($maxWidth / 2))) {
+    font-weight: 600;
+  }
 }
 
 .subtitle {
