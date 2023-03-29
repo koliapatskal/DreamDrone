@@ -1,12 +1,24 @@
 @import '../../../../shared/styles/variables.scss';
 @import '../../../../shared/styles/buttons.scss';
 
-:host {
-  display: block;
-  padding: 3.125rem 9.375rem;
-  margin: 0 auto;
+$containerResponsiveValues: (
+  padding-left: (
+    minPx: 40,
+    maxPx: 150
+  ),
+  padding-right: (
+    minPx: 40,
+    maxPx: 150
+  ),
+  padding-bottom: (
+    minPx: 50,
+    maxPx: 25
+  )
+);
 
-  max-width: $wrapper-size;
+.container {
+  padding-top: rem(50);
+  @include responsive-properties($containerResponsiveValues);
 }
 
 .title {
@@ -31,26 +43,42 @@
   text-align: center;
 }
 
-.q {
-  width: 100%;
-}
-
 .swiper {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
 }
 
+$slideResponsiveValues: (
+  padding-top: (
+    minPx: 0,
+    maxPx: 45
+  ),
+  padding-left: (
+    minPx: 0,
+    maxPx: 45
+  ),
+  padding-right: (
+    minPx: 0,
+    maxPx: 45
+  ),
+  padding-bottom: (
+    minPx: 10,
+    maxPx: 45
+  )
+);
+
 .slide {
+  @include responsive-properties($slideResponsiveValues);
+
   display: flex;
   flex-direction: column;
-  padding: 2.8125rem;
 
   border: 1px solid $gray-border-color;
   border-radius: 10px;
   box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.05);
 
   max-width: 500px;
-  height: 98%;
+  height: 100%;
 
   &__img {
     margin-bottom: 1.875rem;

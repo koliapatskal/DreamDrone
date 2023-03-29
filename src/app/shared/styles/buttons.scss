@@ -12,9 +12,7 @@ $buttonResponsiveValues: (
 );
 
 .button {
-  padding-top: 0.6875rem;
-  padding-bottom: 0.6875rem;
-  @include responsive-properties($buttonResponsiveValues);
+  padding: 0.6875rem 3.75rem;
   border-radius: 1.875rem;
 
   font-size: 1.125rem;
@@ -29,5 +27,11 @@ $buttonResponsiveValues: (
     &:hover {
       background-color: darken($color: #2e4dec, $amount: 15);
     }
+  }
+
+  &__adaptive {
+    padding-top: 0.6875rem;
+    padding-bottom: 0.6875rem;
+    @include responsive-properties($buttonResponsiveValues);
   }
 }
