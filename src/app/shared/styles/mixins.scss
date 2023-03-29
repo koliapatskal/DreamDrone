@@ -1,29 +1,34 @@
 @use 'sass:math';
 @use 'sass:string';
 
-@function rem($px) {
-  $result: math.div($px, 16) + rem;
+@function rem($px, $addUnit: true) {
+  $result: math.div($px, 16);
+  @if $addUnit {
+    $result: $result + rem;
+  }
   @return $result;
 }
 
-@mixin responsive-properties($props, $min-screen: $minWidth, $max-screen: $maxWidth) {
-  @media (max-width: rem($min-screen)) {
+@mixin responsive-properties($props, $min-screen: $minWidthRem, $max-screen: $maxWidthRem) {
+  @media (max-width: ($min-screen + rem)) {
     @each $property, $values in $props {
-      #{$property}: map-get($values, min) + px;
+      $valueInRem: rem(map-get($values, minPx));
+      #{$property}: $valueInRem;
     }
   }
-  @media (min-width: rem($max-screen)) {
+  @media (min-width: ($max-screen + rem)) {
     @each $property, $values in $props {
-      #{$property}: map-get($values, max) + px;
+      $valueInRem: rem(map-get($values, maxPx));
+      #{$property}: $valueInRem;
     }
   }
 
-  @media (min-width: rem($min-screen)) and (max-width: rem($max-screen)) {
+  @media (min-width: ($min-screen + rem)) and (max-width: ($max-screen + rem)) {
     @each $property, $values in $props {
-      $min-value: map-get($values, min);
-      $max-value: map-get($values, max);
+      $min-value-rem: rem(map-get($values, minPx), false);
+      $max-value-rem: rem(map-get($values, maxPx), false);
       #{$property}: calc(
-        #{$min-value}px + (#{$max-value} - #{$min-value}) * ((100vw - #{$min-screen}px) / (#{$max-screen} - #{$min-screen}))
+        #{$min-value-rem}rem + (#{$max-value-rem} - #{$min-value-rem}) * ((100vw - #{$min-screen}rem) / (#{$max-screen} - #{$min-screen}))
       );
     }
   }

@@ -17,5 +17,5 @@ $light-font-weight: 300;
 $wrapper-size: 1440px;
 
 $fontSize: rem(16);
-$minWidth: 380;
-$maxWidth: 1440;
+$minWidthRem: rem(380, false);
+$maxWidthRem: rem(1440, false);

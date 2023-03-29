@@ -40,6 +40,6 @@ $DreamDrone-theme: mat.define-light-theme(
 @import '~swiper/swiper-bundle.css';
 
 .container {
-  max-width: rem($maxWidth);
+  max-width: $maxWidthRem + rem;
   margin: 0 auto;
 }
