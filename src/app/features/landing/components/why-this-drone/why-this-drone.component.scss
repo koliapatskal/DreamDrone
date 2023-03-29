@@ -5,24 +5,62 @@
   background-color: $light-gray-background-color;
 }
 
-.wrapper {
-  max-width: $wrapper-size;
+$containerResponsiveValues: (
+  gap: (
+    minPx: 20,
+    maxPx: 80
+  ),
+  padding-top: (
+    minPx: 30,
+    maxPx: 80
+  ),
+  padding-left: (
+    minPx: 30,
+    maxPx: 140
+  ),
+  padding-right: (
+    minPx: 30,
+    maxPx: 140
+  ),
+  padding-bottom: (
+    minPx: 50,
+    maxPx: 80
+  )
+);
 
-  padding: 5rem 8.75rem;
-  margin: 0 auto;
+.container {
+  @include responsive-properties($containerResponsiveValues);
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+
+  @media (max-width: rem(1000)) {
+    flex-direction: column;
+    text-align: center;
+  }
 }
+
+$imgResponsiveValues: (
+  width: (
+    minPx: 227,
+    maxPx: 342
+  )
+);
 
 .figure {
   img {
-    width: 342px;
-    height: 358px;
+    @include responsive-properties($imgResponsiveValues);
+    object-fit: cover;
   }
 }
+
+$titleResponsiveValues: (
+  font-size: (
+    minPx: 36,
+    maxPx: 48
+  )
+);
 
 .description {
   display: flex;
@@ -32,9 +70,10 @@
   color: $black-font-color;
 
   &__title {
+    @include responsive-properties($titleResponsiveValues);
+
     margin-bottom: 1rem;
 
-    font-size: 3rem;
     font-weight: 600;
     line-height: 1.5;
   }
@@ -48,10 +87,22 @@
   }
 }
 
+$characteristicsResponsiveValues: (
+  gap: (
+    minPx: 50,
+    maxPx: 70
+  )
+);
+
 .characteristics {
+  @include responsive-properties($characteristicsResponsiveValues);
+
   display: grid;
   grid-template-columns: 1fr 1fr 1.3fr 1.3fr;
-  column-gap: 4.375rem;
+
+  @media (max-width: rem(800)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .item {
@@ -60,7 +111,7 @@
   gap: 0.3125rem;
   text-align: center;
 
-  width: fit-content;
+  width: 100%;
 
   &__value {
     font-size: 2.25rem;
