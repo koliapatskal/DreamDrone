@@ -1,29 +1,72 @@
 @import '../../styles/variables.scss';
 
-.header {
+:host {
+  display: block;
+  position: relative;
+}
+
+$containerResponsiveValues: (
+  gap: (
+    minPx: 20,
+    maxPx: 100
+  ),
+  padding-top: (
+    minPx: 20,
+    maxPx: 38
+  ),
+  padding-bottom: (
+    minPx: 20,
+    maxPx: 38
+  )
+);
+
+$logoResponsiveValues: (
+  width: (
+    minPx: 50,
+    maxPx: 75
+  )
+);
+
+.container {
+  @include responsive-properties($containerResponsiveValues);
+
   position: absolute;
-  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6.25rem;
 
-  padding: 2.375rem 11.5625rem;
+  padding-left: rem(30);
+  padding-right: rem(30);
 
+  color: $white-font-color;
   background-color: $black-background-color;
 
   &__logo {
-    width: 4.6875rem;
-    height: 2.1875rem;
+    @include responsive-properties($logoResponsiveValues);
   }
 
-  &__navigation {
+  &__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: rem(15);
   }
 
   &__search {
-    color: $white-font-color;
     cursor: pointer;
+  }
+
+  &__sidenav-toggle {
+    cursor: pointer;
+
+    @media (min-width: rem(800)) {
+      display: none;
+    }
   }
 
   &.transparent {
@@ -31,10 +74,18 @@
   }
 }
 
+$listResponsiveValues: (
+  gap: (
+    minPx: 20,
+    maxPx: 100
+  )
+);
+
 .navigation {
   &__link-list {
+    @include responsive-properties($listResponsiveValues);
+
     display: flex;
-    gap: 6.25rem;
   }
 
   &__link {
@@ -43,5 +94,14 @@
     line-height: 1.5;
 
     color: $white-font-color;
+  }
+}
+
+@media (max-width: rem(800)) {
+  .container {
+    justify-content: space-between;
+  }
+  .navigation {
+    display: none;
   }
 }

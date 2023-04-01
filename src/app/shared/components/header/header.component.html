@@ -1,6 +1,6 @@
-<header class="header" [class.transparent]="isMainPage">
-  <a href="/"><img src="../../../../assets/icons/Logo.svg" alt="Logo" class="header__logo" /></a>
-  <nav class="header__navigation navigation">
+<header class="container" [class.transparent]="isMainPage">
+  <a href="/"><img src="../../../../assets/icons/Logo.svg" alt="Logo" class="container__logo" /></a>
+  <nav class="navigation">
     <ul class="navigation__link-list">
       <li><a href="" class="navigation__link">Home</a></li>
       <li><a href="" class="navigation__link">Gallery</a></li>
@@ -9,5 +9,8 @@
       <li><a href="" class="navigation__link">Support</a></li>
     </ul>
   </nav>
-  <mat-icon class="header__search">search</mat-icon>
+  <div class="container__actions">
+    <mat-icon class="container__search">search</mat-icon>
+    <mat-icon class="container__sidenav-toggle" (click)="onSidenavToggle()">menu</mat-icon>
+  </div>
 </header>
