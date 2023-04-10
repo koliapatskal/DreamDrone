@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+:host {
+  display: block;
+  height: 100%;
+
+  color: $white-font-color;
+  background-color: $black-background-color;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: rem(20) rem(30);
+}
+
+.navigation {
+  &__link-list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    padding: rem(20) rem(30);
+  }
+
+  &__link {
+    font-size: 1.125rem;
+    font-weight: $medium-font-weight;
+    line-height: 1.5;
+
+    color: $white-font-color;
+  }
+}

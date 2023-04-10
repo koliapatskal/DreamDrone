@@ -1,7 +1,9 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="over">asd</mat-sidenav>
+  <mat-sidenav [opened]="isSidenavOpen" class="sidenav-container" mode="over">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
   <mat-sidenav-content>
-    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <app-header></app-header>
     <app-features></app-features>
     <app-footer></app-footer>
   </mat-sidenav-content>

@@ -1,5 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { SidenavService } from '../../services/sidenav/sidenav.service';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Output() public sidenavToggle = new EventEmitter();
-
   public isMainPage: boolean;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private sidenavService: SidenavService) {}
   public ngOnInit(): void {
     this.isMainPage = this.router.url === '/';
   }
 
   public onSidenavToggle(): void {
-    this.sidenavToggle.emit();
+    this.sidenavService.toogleSidenav();
   }
 }
