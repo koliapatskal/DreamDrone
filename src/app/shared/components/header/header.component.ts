@@ -1,5 +1,7 @@
+import { filter } from 'rxjs';
+
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 import { SidenavService } from '../../services/sidenav/sidenav.service';
 
@@ -10,9 +12,13 @@ import { SidenavService } from '../../services/sidenav/sidenav.service';
 })
 export class HeaderComponent implements OnInit {
   public isMainPage: boolean;
+
   constructor(private router: Router, private sidenavService: SidenavService) {}
+
   public ngOnInit(): void {
-    this.isMainPage = this.router.url === '/';
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
+      this.isMainPage = this.router.url === '/';
+    });
   }
 
   public onSidenavToggle(): void {

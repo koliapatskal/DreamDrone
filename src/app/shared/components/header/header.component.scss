@@ -30,11 +30,6 @@ $logoResponsiveValues: (
 .container {
   @include responsive-properties($containerResponsiveValues);
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,10 +63,19 @@ $logoResponsiveValues: (
       display: none;
     }
   }
+}
 
-  &.transparent {
-    background-color: transparent;
-  }
+.transparent {
+  background-color: transparent;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.visible {
+  background-color: $black-background-color;
 }
 
 $listResponsiveValues: (
