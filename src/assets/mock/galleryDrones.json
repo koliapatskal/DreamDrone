@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Leleka-100",
+    "photoPath": "assets/images/gallery/Leleka-100.jpg"
+  },
+  {
+    "name": "MQ-9",
+    "photoPath": "assets/images/gallery/MQ-9.jpg"
+  },
+  {
+    "name": "Bayraktar",
+    "photoPath": "assets/images/gallery/Bayraktar.webp"
+  },
+  {
+    "name": "Phoenix Ghost",
+    "photoPath": "assets/images/gallery/Phoenix Ghost.jpg"
+  },
+  {
+    "name": "Puma",
+    "photoPath": "assets/images/gallery/Puma.jpg"
+  },
+  {
+    "name": "A1CM-3",
+    "photoPath": "assets/images/gallery/A1CM-3.jpg"
+  },
+  {
+    "name": "Switchblade",
+    "photoPath": "assets/images/gallery/Switchblade.jpg"
+  },
+  {
+    "name": "Sparrow",
+    "photoPath": "assets/images/gallery/Sparrow.jpg"
+  }
+]

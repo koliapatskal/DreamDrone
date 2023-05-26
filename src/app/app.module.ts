@@ -5,20 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GalleryModule } from './features/gallery/gallery.module';
 import { LandingModule } from './features/landing/landing.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    LandingModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule, MatSidenavModule, LandingModule, GalleryModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
