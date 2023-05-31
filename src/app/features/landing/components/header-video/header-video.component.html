@@ -1,0 +1,13 @@
+<video #video autoplay loop muted class="back-video">
+  <source src="../../../assets/videos/DJI-Inspire3-1080.webm" type="video/webm" />
+</video>
+<div class="info-block">
+  <h3 class="info-block__title">DJI Inspire 3</h3>
+  <p class="info-block__description">
+    At the peak of aerial cinematography, DJI Inspire 3 offers unprecedented workflow efficiency, camera language, and creative freedom.
+  </p>
+  <button class="info-block__button button primary">Buy Now</button>
+</div>
+<button class="pause-button" (click)="onPauseClick()">
+  <mat-icon class="mat-icon">{{ isVideoPaused ? 'play_arrow' : 'pause' }}</mat-icon>
+</button>

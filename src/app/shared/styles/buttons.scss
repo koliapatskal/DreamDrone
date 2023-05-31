@@ -1,37 +1,48 @@
 @import './variables.scss';
 
-$buttonResponsiveValues: (
-  padding-right: (
-    minPx: 20,
-    maxPx: 60
-  ),
-  padding-left: (
-    minPx: 20,
-    maxPx: 60
-  )
-);
+$primaryButtonColor: #ffc356;
+$secondaryButtonColor: #fcfaee;
+$pauseButtonColor: #191817;
 
 .button {
-  padding: 0.6875rem 3.75rem;
-  border-radius: 1.875rem;
+  min-width: 140px;
 
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.5;
+  padding: rem(10) rem(32);
 
-  color: $white-font-color;
+  border: 2px solid transparent;
+  border-radius: rem(24);
 
-  &__blue {
-    background-color: #2e4dec;
-    transition: all 0.3s;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.15;
+  text-align: center;
+
+  color: $black-font-color;
+
+  &.primary {
+    background-color: $primaryButtonColor;
+    border-color: $primaryButtonColor;
+
+    transition: all 0.3s ease;
+
     &:hover {
-      background-color: darken($color: #2e4dec, $amount: 15);
+      background-color: $secondaryButtonColor;
+      border-color: $secondaryButtonColor;
     }
   }
+}
 
-  &__adaptive {
-    padding-top: 0.6875rem;
-    padding-bottom: 0.6875rem;
-    @include responsive-properties($buttonResponsiveValues);
-  }
+.pause-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: rem(32);
+  height: rem(32);
+
+  border-radius: 50%;
+  background-color: $pauseButtonColor;
+
+  font-size: rem(18);
+  color: $white-font-color;
 }
