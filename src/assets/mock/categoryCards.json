@@ -1,18 +1,18 @@
 [
   {
     "title": "Quadcopters",
-    "photoPath": "../"
+    "photoPath": "assets/images/category/Quadcopter.jpg"
   },
   {
     "title": "Octocopters",
-    "photoPath": "../"
+    "photoPath": "assets/images/category/Octocopter.jpg"
   },
   {
     "title": "Gliders",
-    "photoPath": "../"
+    "photoPath": "assets/images/category/Glider.jpg"
   },
   {
-    "title": "Fixed-wing",
-    "photoPath": "../"
+    "title": "Fixed-wind",
+    "photoPath": "assets/images/category/Fixed-Wind.jpg"
   }
 ]
