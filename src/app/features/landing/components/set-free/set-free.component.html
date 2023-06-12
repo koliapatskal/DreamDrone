@@ -1,0 +1,12 @@
+<div class="container">
+  <h3 class="title">Your senses. Set Free.</h3>
+
+  <div class="video-container">
+    <video #video autoplay loop muted class="video">
+      <source src="../../../assets/videos/DJI-Inspire3-1080.webm" type="video/webm" />
+    </video>
+    <button class="pause-button" (click)="onPauseClick()">
+      <mat-icon class="mat-icon">{{ isVideoPaused ? 'play_arrow' : 'pause' }}</mat-icon>
+    </button>
+  </div>
+</div>

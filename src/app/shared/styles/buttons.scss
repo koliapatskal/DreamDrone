@@ -45,4 +45,10 @@ $pauseButtonColor: #191817;
 
   font-size: rem(18);
   color: $white-font-color;
+
+  .mat-icon {
+    font-size: rem(22);
+    width: rem(22);
+    height: rem(22);
+  }
 }
