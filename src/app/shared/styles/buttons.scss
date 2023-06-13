@@ -4,6 +4,8 @@ $primaryButtonColor: #ffc356;
 $secondaryButtonColor: #fcfaee;
 $pauseButtonColor: #191817;
 
+$darkBorderColor: black;
+
 .button {
   min-width: 140px;
 
@@ -28,6 +30,19 @@ $pauseButtonColor: #191817;
     &:hover {
       background-color: $secondaryButtonColor;
       border-color: $secondaryButtonColor;
+    }
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border-color: $darkBorderColor;
+
+    transition: all 0.3s ease;
+
+    &:hover,
+    &.hover {
+      background-color: $primaryButtonColor;
+      border-color: $primaryButtonColor;
     }
   }
 }

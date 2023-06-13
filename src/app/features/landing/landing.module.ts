@@ -9,9 +9,10 @@ import { CategoryListComponent } from './components/category-list/category-list.
 import { HeaderVideoComponent } from './components/header-video/header-video.component';
 import { LandingComponent } from './landing.component';
 import { SetFreeComponent } from './components/set-free/set-free.component';
+import { NeedHelpComponent } from './components/need-help/need-help.component';
 
 @NgModule({
-  declarations: [LandingComponent, HeaderVideoComponent, CategoryListComponent, SetFreeComponent],
+  declarations: [LandingComponent, HeaderVideoComponent, CategoryListComponent, SetFreeComponent, NeedHelpComponent],
   imports: [CommonModule, SwiperModule, MatIconModule, HttpClientModule]
 })
 export class LandingModule {}
