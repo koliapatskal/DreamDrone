@@ -1,16 +1,12 @@
-<header class="container" [class.transparent]="isMainPage">
-  <a href="/"><img src="../../../../assets/icons/Logo.svg" alt="Logo" class="container__logo" /></a>
-  <nav class="navigation">
-    <ul class="navigation__link-list">
-      <li><a href="" class="navigation__link">Home</a></li>
-      <li><a href="" class="navigation__link">Gallery</a></li>
-      <li><a href="" class="navigation__link">Products</a></li>
-      <li><a href="" class="navigation__link">Review</a></li>
-      <li><a href="" class="navigation__link">Support</a></li>
+<header class="container">
+  <a href="/" class="logo"><img src="../../../../assets/icons/Logo-{{ isScrolled ? 'Black' : 'White' }}.png" alt="Logo" /></a>
+  <nav class="navbar">
+    <ul class="navbar__nav">
+      <li class="navbar__item"><a href="" class="navbar__link">DJI</a></li>
+      <li class="navbar__item"><a href="" class="navbar__link">FPV</a></li>
     </ul>
   </nav>
-  <div class="container__actions">
-    <mat-icon class="container__search">search</mat-icon>
-    <mat-icon class="container__sidenav-toggle" (click)="onSidenavToggle()">menu</mat-icon>
+  <div class="actions">
+    <mat-icon class="search">search</mat-icon>
   </div>
 </header>

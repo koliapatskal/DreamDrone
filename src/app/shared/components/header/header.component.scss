@@ -1,107 +1,107 @@
 @import '../../styles/variables.scss';
 
+$transition-delay: 0.3s;
+
 :host {
   display: block;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  width: 100%;
+
+  background-color: transparent;
+  transition: background-color $transition-delay ease;
 }
 
-$containerResponsiveValues: (
-  gap: (
-    minPx: 20,
-    maxPx: 100
-  ),
-  padding-top: (
-    minPx: 20,
-    maxPx: 38
-  ),
-  padding-bottom: (
-    minPx: 20,
-    maxPx: 38
-  )
-);
+:host(.scrolled) {
+  background-color: $white-background-color;
 
-$logoResponsiveValues: (
-  width: (
-    minPx: 50,
-    maxPx: 75
-  )
-);
-
-.container {
-  @include responsive-properties($containerResponsiveValues);
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding-left: rem(30);
-  padding-right: rem(30);
-
-  color: $white-font-color;
-  background-color: $black-background-color;
-
-  &__logo {
-    @include responsive-properties($logoResponsiveValues);
-  }
-
-  &__actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: rem(15);
-  }
-
-  &__search {
-    cursor: pointer;
-  }
-
-  &__sidenav-toggle {
-    cursor: pointer;
-
-    @media (min-width: rem(800)) {
-      display: none;
+  .logo {
+    img {
+      width: rem(32);
+      height: rem(32);
     }
   }
 
-  &.transparent {
-    background-color: transparent;
+  .navbar {
+    &__link {
+      color: $black-font-color;
+
+      &::after {
+        background-color: $black-font-color;
+      }
+    }
+  }
+
+  .actions {
+    color: $black-font-color;
   }
 }
 
-$listResponsiveValues: (
-  gap: (
-    minPx: 20,
-    maxPx: 100
-  )
-);
+.container {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
 
-.navigation {
-  &__link-list {
-    @include responsive-properties($listResponsiveValues);
+  padding: rem(14) rem(36);
+}
 
+.logo {
+  img {
+    width: rem(52);
+    height: rem(52);
+
+    transition: all $transition-delay ease;
+  }
+}
+
+.navbar {
+  &__nav {
     display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: rem(5) rem(20);
   }
 
   &__link {
-    font-size: 1.125rem;
-    font-weight: $medium-font-weight;
-    line-height: 1.5;
+    font-size: rem(11);
+    font-weight: 400;
+    letter-spacing: rem(2);
 
     color: $white-font-color;
+
+    transition: color $transition-delay ease;
+
+    &::after {
+      content: '';
+      display: block;
+
+      margin-top: rem(2);
+
+      width: 0;
+      height: 2px;
+
+      border-radius: 10px;
+      background-color: $white-font-color;
+
+      transition: width $transition-delay ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   }
 }
 
-@media (max-width: rem(800)) {
-  .container {
-    justify-content: space-between;
-  }
-  .navigation {
-    display: none;
-  }
+.actions {
+  display: flex;
+
+  margin-left: auto;
+
+  color: $white-font-color;
+  transition: all $transition-delay ease;
 }

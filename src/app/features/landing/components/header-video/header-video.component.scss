@@ -1,0 +1,58 @@
+@import '../../../../shared/styles/variables.scss';
+@import '../../../../shared/styles/buttons.scss';
+
+:host {
+  display: block;
+  position: relative;
+  z-index: -1;
+  height: 90vh;
+}
+.back-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: rem(24);
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  padding: rem(60);
+
+  max-width: 50%;
+
+  color: $white-font-color;
+
+  &__title {
+    font-size: rem(48);
+    line-height: 4.5rem;
+    font-weight: 500;
+    letter-spacing: rem(-0.5);
+  }
+
+  &__description {
+    font-size: rem(24);
+    line-height: 1.625rem;
+    font-weight: 400;
+    letter-spacing: rem(0.2);
+    white-space: pre-wrap;
+  }
+}
+
+.pause-button {
+  position: absolute;
+  right: rem(60);
+  bottom: rem(60);
+}

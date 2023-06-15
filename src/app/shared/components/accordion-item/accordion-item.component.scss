@@ -1,0 +1,43 @@
+@import '../../styles/variables.scss';
+
+.accordion-item {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(20);
+
+    color: $white-font-color;
+    background-color: $black-background-color;
+
+    cursor: pointer;
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: rem(36);
+      height: rem(36);
+
+      font-size: rem(36);
+
+      overflow: visible;
+
+      transition: all 0.2s ease;
+
+      &.expanded {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__body {
+    max-height: 0;
+
+    color: $white-font-color;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+  }
+}

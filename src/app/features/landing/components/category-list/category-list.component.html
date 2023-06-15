@@ -1,0 +1,10 @@
+<a *ngFor="let categoryCard of categoryCards" href="" class="category__link">
+  <figure class="category__figure">
+    <img src="{{ categoryCard.photoPath }}" alt="{{ categoryCard.title }}" class="category__image" />
+    <caption class="category__caption">
+      {{
+        categoryCard.title
+      }}
+    </caption>
+  </figure>
+</a>

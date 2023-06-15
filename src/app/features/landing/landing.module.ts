@@ -1,26 +1,18 @@
 import { SwiperModule } from 'swiper/angular';
 
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
-import { GetNowComponent } from './components/get-now/get-now.component';
-import { NewProductsComponent } from './components/new-products/new-products.component';
-import {
-  PhotoDescriptionComponent
-} from './components/photo-description/photo-description.component';
-import { ReviewsComponent } from './components/reviews/reviews.component';
-import { WhyThisDroneComponent } from './components/why-this-drone/why-this-drone.component';
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { HeaderVideoComponent } from './components/header-video/header-video.component';
 import { LandingComponent } from './landing.component';
+import { SetFreeComponent } from './components/set-free/set-free.component';
+import { NeedHelpComponent } from './components/need-help/need-help.component';
 
 @NgModule({
-  declarations: [
-    LandingComponent,
-    GetNowComponent,
-    PhotoDescriptionComponent,
-    WhyThisDroneComponent,
-    NewProductsComponent,
-    ReviewsComponent
-  ],
-  imports: [CommonModule, SwiperModule]
+  declarations: [LandingComponent, HeaderVideoComponent, CategoryListComponent, SetFreeComponent, NeedHelpComponent],
+  imports: [CommonModule, SwiperModule, MatIconModule, HttpClientModule]
 })
 export class LandingModule {}
