@@ -1,0 +1,9 @@
+<cdk-accordion-item #accordionItem="cdkAccordionItem" class="accordion-item">
+  <div class="accordion-item__header" (click)="accordionItem.toggle()">
+    <ng-content select="#headerTitle"></ng-content>
+    <mat-icon class="icon" [class.expanded]="accordionItem.expanded">expand_more</mat-icon>
+  </div>
+  <div class="accordion-item__body" [style.maxHeight]="accordionItem.expanded ? accordionBody.nativeElement.clientHeight + 'px' : '0'">
+    <ng-content select="#accordionBody"></ng-content>
+  </div>
+</cdk-accordion-item>

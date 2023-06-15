@@ -1,30 +1,33 @@
 <div class="container">
-  <div class="column">
-    <a class="logo">
-      <img class="logo__img" src="../../../../assets/icons/Logo.svg" alt="DreamDrone logo" />
-      <h3 class="logo__title">DreamDrone</h3>
-    </a>
-    <p>Look up the sky and beautiful world easily.</p>
-  </div>
-  <div class="column">
-    <h3 class="column__title">Explore</h3>
-    <a href="" class="column__link">Our Services</a>
-    <a href="" class="column__link">Specification</a>
-    <a href="" class="column__link">Refund</a>
-    <a href="" class="column__link">Playlist</a>
-  </div>
-  <div class="column">
-    <h3 class="column__title">Account</h3>
-    <a href="" class="column__link">My Account</a>
-    <a href="" class="column__link">Top Benefit</a>
-    <a href="" class="column__link">How-to Tutorials</a>
-    <a href="" class="column__link">Moment</a>
-  </div>
-  <div class="column">
-    <h3 class="column__title">Office</h3>
-    <a href="" class="column__link">+021 2208 1996</a>
-    <a href="" class="column__link">SCBD, Jakarta</a>
-    <a href="" class="column__link">No.2 (Autodrone)</a>
-    <a href="" class="column__link">support@autodrone.id</a>
-  </div>
+  <cdk-accordion class="accordion">
+    <app-accordion-item>
+      <span id="headerTitle" class="accordion-title">{{ 'Customer Care' | uppercase }}</span>
+      <ul #accordionBody id="accordionBody" class="accordion-body__ul">
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>FAQ</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Service and Support</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Contact us</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Find store</li>
+      </ul>
+    </app-accordion-item>
+    <app-accordion-item>
+      <span id="headerTitle" class="accordion-title">{{ 'Our Policies' | uppercase }}</span>
+      <ul #accordionBody id="accordionBody" class="accordion-body__ul">
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Accessibility</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Cookie Policy</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Privacy Policy</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Policies and terms</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Counterfeit</li>
+      </ul>
+    </app-accordion-item>
+    <app-accordion-item>
+      <span id="headerTitle" class="accordion-title">{{ 'Social Links' | uppercase }}</span>
+      <ul #accordionBody id="accordionBody" class="accordion-body__ul">
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Facebook</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Instagram</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Twitter</li>
+        <li class="accordion-body__li"><a href="" class="accordion-body__a"></a>Youtube</li>
+      </ul>
+    </app-accordion-item>
+  </cdk-accordion>
+  <div class="copyright">&copy; DreamDrone 2023</div>
 </div>
